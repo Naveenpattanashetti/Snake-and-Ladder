@@ -4,22 +4,24 @@ public class Snake_and_ladder {
 
 	public static void main(String[] args)   {
 		int position = 0;
+		int diceRollCount = 0;
 		System.out.println("Welcome into Snake and Ladder program !! ");
 		System.out.println("position is " + position);
 		int diceValue = (int) (Math.random() * 10) % 6 + 1;
 		Utility utility = new Utility();
-		utility.playOption(position, diceValue);
+		utility.playOption(position, diceValue, diceRollCount);
 
 	}
 }
 
 class Utility {
 
-	public void playOption(int position, int diceValue) {
+	public void playOption(int position, int diceValue, int diceRollCount) {
 
 		while (position <= 99) {
 
 			int optionValue = (int) (Math.random() * 10) % 3 + 1;
+			diceRollCount++;
 
 			switch (optionValue) {
 			case 1:
@@ -45,6 +47,7 @@ class Utility {
 				break;
 			}
 		}
+		System.out.println("dice play number:: " + diceRollCount);
 	}
 
 }
